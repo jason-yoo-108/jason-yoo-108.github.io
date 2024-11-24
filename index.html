@@ -63,24 +63,48 @@
           <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 
             <tr>
-              <td style="padding:20px;width:25%;vertical-align:middle">
+              <!-- <td style="padding:20px;width:25%;vertical-align:middle">
                 <div class="one">
-                  <img src='images/ocl_dm.jpg' width=100%>
+                  <img src='images/lifelong_vdm.gif' width=100%>
                 </div>
+              </td> -->
+              <td style="padding:20px;width:25%;vertical-align:middle" onmouseout="maze_stop()" onmouseover="maze_start()">
+                <div class="container" style="position:relative;">
+                  <!-- The GIF (initially hidden) -->
+                  <div class="maze" id="maze_image" style="position:absolute; top:0; left:0; width:100%; height:100%; opacity:0; visibility:hidden;">
+                    <img src="images/lifelong_vdm_inf.gif" width="100%" alt="Animated Maze">
+                  </div>
+                  <!-- The static fallback image -->
+                  <img src="images/lifelong_vdm.jpg" width="100%" alt="Static Maze">
+                </div>
+                <script type="text/javascript">
+                  function maze_start() {
+                    const mazeImage = document.getElementById('maze_image');
+                    mazeImage.style.opacity = "1";        // Make GIF visible
+                    mazeImage.style.visibility = "visible"; // Ensure visibility is enabled
+                  }
+
+                  function maze_stop() {
+                    const mazeImage = document.getElementById('maze_image');
+                    mazeImage.style.opacity = "0";        // Hide GIF
+                    mazeImage.style.visibility = "hidden"; // Hide from view
+                  }
+                  maze_stop();
+                </script>
               </td>
               <td style="padding:20px;width:75%;vertical-align:middle">
                 <a href="https://arxiv.org/abs/2012.05390">
-                  <span class="papertitle">Online Continual Learning of Video Diffusion Models From a Single Video Stream</span>
+                  <span class="papertitle">Lifelong Learning of Video Diffusion Models From a Single Video Stream</span>
                 </a>
                 <br>
-                <strong>Jason Yoo</strong>, Dylan Green, Geoff Pleiss, Frank Wood
+                <strong>Jason Yoo</strong>, Yingchen He, Saeid Naderiparizi, Dylan Green, Gido M. van de Ven, Geoff Pleiss, Frank Wood
                 <br>
                 <em>arXiv preprint</em>, 2024
                 <br>
-                [<a href="https://arxiv.org/abs/2406.04814">Workshop Paper</a>]
+                [<a href="https://arxiv.org/abs/2406.04814">Paper</a>]
                 <p></p>
                 <p>
-                  We demonstrate for the first time that diffusion models can be online learned on simple video streams using experience replay.
+                  We show that training autoregressive video diffusion models from a single, continuous video stream can be competitive with offline training given the same number of gradient steps and introduce three new datasets.
                 </p>
               </td>
             </tr>
@@ -365,6 +389,7 @@
                   </ul>
                   <h3>In Progress</h3>
                   <ul style="list-style-type: disc; margin-left: 20px;">
+                    <li><em>The Matter with Things: Our Brains, Our Delusions, and the Unmaking of the World</em> by Iain McGilchrist</li>
                     <li><em>Thinking, Fast and Slow</em> by Daniel Kahneman</li>
                     <li><em>The Brain from Inside Out</em> by György Buzsáki</li>
                     <li><em>From Bacteria to Bach and Back: The Evolution of Minds</em> by Daniel Dennett</li>
